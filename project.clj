@@ -1,4 +1,5 @@
 (defproject ringneck "1.0.0"
+  :min-lein-version "2.9.0"
   :dependencies [[org.clojure/clojure "1.10.0"]
   															[compojure "1.6.1"]
   															[ring/ring-core "1.6.3"]
