@@ -30,7 +30,7 @@
   (response {
   		:move "up"
   		:shout "ssSSSsssS!!"
-  	})
+  	}))
 
 (defroutes app-routes
   (GET "/" [] ping)

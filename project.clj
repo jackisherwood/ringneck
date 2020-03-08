@@ -8,4 +8,8 @@
   :plugins [[lein-ring "0.12.5"]]
   :ring {:handler ringneck.handler/app
          :auto-reload? true
-         :auto-refresh? true})
+         :auto-refresh? true}
+  :profiles {
+  	:dev {:dependencies [[javax.servlet/servlet-api "2.5"]
+                        [ring-mock "0.1.5"]]}})
+
