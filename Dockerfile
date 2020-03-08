@@ -1,7 +1,15 @@
-FROM openjdk:8u181-alpine3.8
+FROM clojure
 
-WORKDIR /
+RUN mkdir -p /usr/src/app
 
-COPY target/ringneck-1.0.0-standalone.jar ringneck.jar
+WORKDIR /usr/src/app
 
-CMD java -jar ringneck.jar
+COPY project.clj /usr/src/app/
+
+RUN lein deps
+
+COPY . /usr/src/app
+
+RUN mv "$(lein ring uberjar | sed -n 's/^Created \(.*standalone\.jar\)/\1/p')" app-standalone.jar
+
+CMD ["java", "-jar", "app-standalone.jar"]
