@@ -20,9 +20,8 @@
 	(pprint (:params request))  ;; debug
 	(response {
 			:color "#FF6D19"
-			:secondary_color "#f4f4f4"
-			:head_type "tongue"
-			:tail_type "skinny"
+			:headType "tongue"
+			:tailType "fat-rattle"
 		}))
 
 ; take turn in game
