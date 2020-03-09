@@ -5,7 +5,8 @@
             [ring.middleware.defaults :refer [wrap-defaults site-defaults]]
             [ring.middleware.json :as middleware]
             [ring.util.response :refer [response]]
-            [clojure.pprint :refer [pprint]]))
+            [clojure.pprint :refer [pprint]]
+            [ringneck.logic :as logic]))
 
 ; heartbeat
 (defn ping [request]
@@ -17,7 +18,7 @@
 
 ; start of new game
 (defn start [request]
-	(pprint (:params request))  ;; debug
+	; (pprint (:params request))  ;; debug
 	(response {
 			:color "#FF6D19"
 			:headType "tongue"
@@ -26,9 +27,9 @@
 
 ; take turn in game
 (defn move [request]
-  (pprint (:params request)) ;; debug
+  ; (pprint (:params request)) ;; debug
   (response {
-  		:move "up"
+  		:move (logic/calc-move (:params request))
   		:shout "ssSSSsssS!!"
   	}))
 
