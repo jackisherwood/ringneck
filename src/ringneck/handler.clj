@@ -21,8 +21,8 @@
 	(response {
 			:color "#FF6D19"
 			:secondary_color "#f4f4f4"
-			:head_type "beluga"
-			:tail_type "fat-rattle"
+			:head_type "tongue"
+			:tail_type "skinny"
 		}))
 
 ; take turn in game
