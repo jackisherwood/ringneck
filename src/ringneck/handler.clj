@@ -27,7 +27,7 @@
 
 ; take turn in game
 (defn move [request]
-  ; (pprint (:params request)) ;; debug
+  (pprint (:params request)) ;; debug
   (response {
   		:move (logic/calc-move (:params request))
   		:shout "ssSSSsssS!!"
